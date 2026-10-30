@@ -72,12 +72,22 @@ The root `index.html` and ES modules are a static site with English/Arabic contr
 
 Read the [executed three-alternative comparison](docs/THREE-ALTERNATIVE-REVIEW.md), including pinned competitor versions, synthetic fixtures, raw results and competitor strengths. These scoped checks are not an overall security ranking.
 
-Browser export buttons also reveal copyable report text. Automated browser checks did not confirm a completed file download; use the text fallback or CLI output if downloads are blocked.
+Browser export buttons also reveal copyable report text. The optional Chromium tests below save completed Markdown and SARIF downloads, inspect their bytes in both English and Arabic, and check the copyable-text fallback when browser downloads are refused. Use that fallback or CLI output if downloads are blocked.
 
 ```sh
 node --test
 node benchmark/run.mjs
 ```
+
+To run the browser checks, install the development-only test dependency with [Bun](https://bun.sh), then its Chromium browser:
+
+```sh
+bun install --frozen-lockfile
+bunx playwright install chromium
+bun run test:browser
+```
+
+Node 22+ must also be on PATH. On Linux, use `bunx playwright install --with-deps chromium` if browser system dependencies are missing. The test runner starts and stops `node preview.mjs`; port 8432 must be free. Six tests exercise fictional Claude settings and MCP environment changes, stable rule IDs, SARIF 2.1.0 results, canary redaction, and copyable text with downloads enabled and refused. Completed files are saved under ignored `test-results/` directories for inspection. This verifies local Chromium behavior, not other browsers, GitHub SARIF ingestion or effective permissions. Normal CLI and browser-demo use still need no dependency installation.
 
 The suite covers malformed input, line evidence, permission changes, credential canaries, CLI behavior, GitHub summaries and deterministic comparisons. The benchmark is a small synthetic suite, not independent validation or proof of market superiority. See [comparison evidence](docs/COMPARISON.md) and [quality gates](docs/QUALITY.md).
 

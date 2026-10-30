@@ -5,8 +5,15 @@
   "description": "Offline, evidence-linked review of permission changes in Claude settings and MCP configurations.",
   "type": "module",
   "bin": { "monna-permission-diff": "cli.mjs" },
-  "scripts": { "test": "node --test", "demo": "node cli.mjs examples/before.json examples/after.json --format markdown --fail-on none" },
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "playwright test",
+    "demo": "node cli.mjs examples/before.json examples/after.json --format markdown --fail-on none"
+  },
   "engines": { "node": ">=22" },
   "files": ["cli.mjs", "src/", "examples/", "README.md", "LICENSE"],
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
 }
