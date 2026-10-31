@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "tool": {
+    "name": "MONNA Agent Permission Diff",
+    "version": "0.1.0"
+  },
+  "format": "mcp",
+  "verdict": "no_review_level_change_detected",
+  "findings": [],
+  "coverage": {
+    "status": "partial",
+    "unsupported_fields": [
+      {
+        "status": "unsupported",
+        "evidence": {
+          "before": {
+            "line": 5,
+            "column": 20
+          },
+          "after": {
+            "line": 5,
+            "column": 20
+          }
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Static comparison of two supplied files, not effective permission evaluation.",
+    "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+    "No server commands, hooks or tools are executed; no network requests are made.",
+    "Config values are withheld from reports. Source line locations identify evidence."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fictional": {
+      "command": "NUMERIC_PUBLIC_FIXTURE_NEVER_EXECUTE",
+      "extension": {
+        "revision": 9007199254740992
+      }
+    }
+  }
+}

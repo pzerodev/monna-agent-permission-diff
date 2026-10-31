@@ -4,6 +4,24 @@ const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 const canonical=x=>Array.isArray(x)?x.map(canonical):object(x)?Object.fromEntries(Object.keys(x).sort().map(k=>[k,canonical(x[k])])):x;
 const equal=(a,b)=>JSON.stringify(canonical(a))===JSON.stringify(canonical(b));
 const esc=k=>k.replaceAll('~','~0').replaceAll('/','~1');
+// Compare unsupported numeric fields as exact decimal values, not as their
+// rounded JavaScript Number. Strip only mathematically irrelevant zeroes.
+function decimal(literal){
+  const [,sign,integer,fraction='',exponent='0']=/^(-?)(\d+)(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/.exec(literal);
+  const digits=(integer+fraction).replace(/^0+/,'');
+  if(!digits)return '0';
+  const coefficient=digits.replace(/0+$/,'');
+  const power=BigInt(exponent)-BigInt(fraction.length)+BigInt(digits.length-coefficient.length);
+  return sign+coefficient+'e'+power;
+}
+function exact(value,pointer,numbers){
+  if(typeof value==='number')return ['number',decimal(numbers.get(pointer))];
+  if(Array.isArray(value))return ['array',value.map((v,i)=>exact(v,pointer+'/'+i,numbers))];
+  if(object(value))return ['object',Object.keys(value).sort().map(k=>[k,exact(value[k],pointer+'/'+esc(k),numbers)])];
+  // Tag every kind so a source string/array cannot collide with a number's
+  // private comparison representation. Missing and null also stay distinct.
+  return [typeof value,value];
+}
 function validate(c,format){
   const obj=(v)=>{if(!object(v))throw new ConfigError('Expected an object in a supported configuration field.');};
   const arr=(v)=>{if(!Array.isArray(v)||v.some(s=>typeof s!=='string'))throw new ConfigError('Expected a string array in a supported configuration field.');};
@@ -33,8 +51,10 @@ export function compare(beforeText,afterText,{format='auto'}={}){
   const add=(code,severity,message,p='',q=p,direction='review')=>findings.push({code,severity,direction,message,evidence:{before:location(before,p),after:location(after,q)}});
   function unknown(a,b,known,p=''){
     for(const k of [...new Set([...Object.keys(a),...Object.keys(b)])].sort())if(!known.includes(k)){
-      coverage.push({status:'unsupported',evidence:{before:location(before,p+'/'+esc(k)),after:location(after,p+'/'+esc(k))}});
-      if(!equal(a[k],b[k]))add('UNMODELED_CHANGE','medium','An unsupported field changed. Its permission impact is unknown; inspect the cited lines.',p+'/'+esc(k));
+      const pointer=p+'/'+esc(k);
+      coverage.push({status:'unsupported',evidence:{before:location(before,pointer),after:location(after,pointer)}});
+      if(JSON.stringify(exact(a[k],pointer,before.numberLiterals))!==JSON.stringify(exact(b[k],pointer,after.numberLiterals)))
+        add('UNMODELED_CHANGE','medium','An unsupported field changed. Its permission impact is unknown; inspect the cited lines.',pointer);
     }
   }
   function sets(a,b,p,addCode,removeCode,addSeverity='high',removeSeverity='info'){

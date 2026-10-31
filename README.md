@@ -39,6 +39,12 @@ SARIF uses generic `before.json` / `after.json` artifact names to avoid disclosi
 
 Client-specific extensions are not automatically understood. MCP JSON is a client configuration convention, not a complete authorization model defined by MCP itself. A server addition does not prove new runtime access. `disabled` semantics depend on the client. Unknown fields produce partial coverage; changed unknown fields produce review findings. Known cosmetic fields are not silently discarded in this initial release.
 
+Numeric values in unsupported fields compare by their exact supplied decimal
+value, including integers beyond JavaScript's exact integer range and values
+that underflow to zero. Equivalent spellings such as `1`, `1.0` and `1e0`
+remain equal. This detects declared changes without assuming how a client
+interprets the unsupported field. Existing input/range limits still apply.
+
 Permission lists compare as sets; executable arguments compare in order. Paths and rule expressions compare literally: no glob equivalence, path resolution, symlink following or managed-policy merging. Reports indicate potential expansion/reduction, never claim new effective access. Added allow and removed deny/ask rules still need review even when another rule might override them.
 
 Strict UTF-8 JSON only: no JSONC, comments or trailing commas. Duplicate keys, nonfinite numbers and malformed consumed fields are rejected. Input limits: 2 MB bytes per file, 1 million characters, nesting depth 64 and 50,000 parsed nodes. Large inputs fail visibly rather than being truncated.

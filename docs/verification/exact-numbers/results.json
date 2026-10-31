@@ -1,0 +1,1267 @@
+{
+  "schemaVersion": 1,
+  "base": "7555911a4990338791853c7f363c01941a2fd376",
+  "method": "Identical test/CLI/nativeFileAPI browser workflow before/after; real files/downloads; no configured commands/MCPexecution or network during analysis",
+  "oracle": {
+    "runtime": "3.12.10",
+    "cases": [
+      {
+        "case": "positive-integer",
+        "exactEqual": false,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      },
+      {
+        "case": "decimal-tail",
+        "exactEqual": false,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      },
+      {
+        "case": "underflow",
+        "exactEqual": false,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      },
+      {
+        "case": "equal-large-integer",
+        "exactEqual": true,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      },
+      {
+        "case": "equal-underflow",
+        "exactEqual": true,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      },
+      {
+        "case": "number-to-string",
+        "exactEqual": false,
+        "sourceComparison": "Python json.loads with decimal.Decimal for every JSON number"
+      }
+    ]
+  },
+  "runs": {
+    "before": {
+      "node": {
+        "tests": 51,
+        "pass": 41,
+        "fail": 10,
+        "skipped": 0
+      },
+      "benchmark": {
+        "passed": 10,
+        "total": 10
+      },
+      "browser": [
+        {
+          "case": "positive-integer",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "bd55acffa20d2d5670407303bc578a1c32903dfddc105dea6f0636e6be6871c9",
+            "afterSha256": "edcdfb20a752157d2e949d87eca07eb6af7cf9f9c7038afc15826563af7bb9dd"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [
+            "json CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "markdown CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "sarif CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "JSON finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n",
+            "SARIF finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n"
+          ],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "decimal-tail",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "cf4df3582c0343d2eb4b3fe68d1878a77ff385947b44b2c02c2bbb0eaa68ebe9",
+            "afterSha256": "cf848369735b74aaa58dbbaaab829b2bf5a745b0f6723f0bdd740ef75d8274cb"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 940,
+              "sha256": "267e7247b47e718be8f0bb0a99ec41224b90bd6c7b4e8dfcdecce8dca734b9a8"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 727,
+              "sha256": "466d03d718f55eff2640c567ed508ec44c08ff08d7e84e7bc72b118df630bc1f"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [
+            "json CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "markdown CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "sarif CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "JSON finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n",
+            "SARIF finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n"
+          ],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "claude-settings",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 3,
+                      "column": 22
+                    },
+                    "after": {
+                      "line": 3,
+                      "column": 22
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "underflow",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 تغييرات · لا توجد تغييرات بمستوى المراجعة · التغطية جزئية",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "8ac28ef9aa0feee347c71f7b75b628214370464fe2d53fec75ed3feb715500a8",
+            "afterSha256": "3ace0f38be5f2ad5ea3e0cf274c4bdf310d74e614d866d73f284f239962dc247"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [
+            "json CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "markdown CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "sarif CLI medium gate: Expected values to be strictly equal:\n\n0 !== 1\n",
+            "JSON finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n",
+            "SARIF finding codes: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'UNMODELED_CHANGE'\n- ]\n"
+          ],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "equal-large-integer",
+          "expectedCodes": [],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "edcdfb20a752157d2e949d87eca07eb6af7cf9f9c7038afc15826563af7bb9dd",
+            "afterSha256": "c29e3cb91af87a7f9bc4006d13d21dabbaa7cc614a0469ee4b5bc76d52aa17bb"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "equal-underflow",
+          "expectedCodes": [],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "8ac28ef9aa0feee347c71f7b75b628214370464fe2d53fec75ed3feb715500a8",
+            "afterSha256": "eeb9bd66902ba317c03fcc942ad7b6c3f436c1ed5983f56f3da0688ff522c446"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "number-to-string",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 1,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "1 changes · review_required · Coverage: partial",
+          "actualCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "evidence": [
+            {
+              "before": {
+                "line": 3,
+                "column": 22
+              },
+              "after": {
+                "line": 3,
+                "column": 22
+              }
+            }
+          ],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "cf4df3582c0343d2eb4b3fe68d1878a77ff385947b44b2c02c2bbb0eaa68ebe9",
+            "afterSha256": "d7f2752647966daa08f77f0e9e5161c9d9c87fdc741b14948556989ab5e64b39"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 1315,
+              "sha256": "3c05f79bf9092cb7c251f06a2f25e082dc2ff0b127def3fda1241e01cdd8023c"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 781,
+              "sha256": "0043d340615489974356aec2a9248e3601031e53dac7a9f54525d5881adbbabb"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 1991,
+              "sha256": "e24705c030d347b9d2d106948304fe398fdae3974033d35adf87a397b8d51f8a"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "claude-settings",
+            "verdict": "review_required",
+            "findings": [
+              {
+                "code": "UNMODELED_CHANGE",
+                "severity": "medium",
+                "direction": "review",
+                "message": "An unsupported field changed. Its permission impact is unknown; inspect the cited lines.",
+                "evidence": {
+                  "before": {
+                    "line": 3,
+                    "column": 22
+                  },
+                  "after": {
+                    "line": 3,
+                    "column": 22
+                  }
+                }
+              }
+            ],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 3,
+                      "column": 22
+                    },
+                    "after": {
+                      "line": 3,
+                      "column": 22
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        }
+      ],
+      "runtime": {
+        "node": "v24.3.0",
+        "chromium": "156.0.8078.4"
+      }
+    },
+    "after": {
+      "node": {
+        "tests": 51,
+        "pass": 51,
+        "fail": 0,
+        "skipped": 0
+      },
+      "benchmark": {
+        "passed": 10,
+        "total": 10
+      },
+      "browser": [
+        {
+          "case": "positive-integer",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 1,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "1 changes · review_required · Coverage: partial",
+          "actualCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "evidence": [
+            {
+              "before": {
+                "line": 5,
+                "column": 20
+              },
+              "after": {
+                "line": 5,
+                "column": 20
+              }
+            }
+          ],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "bd55acffa20d2d5670407303bc578a1c32903dfddc105dea6f0636e6be6871c9",
+            "afterSha256": "edcdfb20a752157d2e949d87eca07eb6af7cf9f9c7038afc15826563af7bb9dd"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 1303,
+              "sha256": "a9f8cb0ef2982238393603879bdcc18b90b14abd690c3dbc9a0dee3753cbcbc8"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 769,
+              "sha256": "819ec6af403fdc703407fecee9dd073cf59ddb0b4537b4508ed1001aca5f4891"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 1991,
+              "sha256": "37918db97efcdce3981123c5c877012cd72118640602be54d673c2336727ed32"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "review_required",
+            "findings": [
+              {
+                "code": "UNMODELED_CHANGE",
+                "severity": "medium",
+                "direction": "review",
+                "message": "An unsupported field changed. Its permission impact is unknown; inspect the cited lines.",
+                "evidence": {
+                  "before": {
+                    "line": 5,
+                    "column": 20
+                  },
+                  "after": {
+                    "line": 5,
+                    "column": 20
+                  }
+                }
+              }
+            ],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "decimal-tail",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 1,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "1 changes · review_required · Coverage: partial",
+          "actualCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "evidence": [
+            {
+              "before": {
+                "line": 3,
+                "column": 22
+              },
+              "after": {
+                "line": 3,
+                "column": 22
+              }
+            }
+          ],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "cf4df3582c0343d2eb4b3fe68d1878a77ff385947b44b2c02c2bbb0eaa68ebe9",
+            "afterSha256": "cf848369735b74aaa58dbbaaab829b2bf5a745b0f6723f0bdd740ef75d8274cb"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 1315,
+              "sha256": "3c05f79bf9092cb7c251f06a2f25e082dc2ff0b127def3fda1241e01cdd8023c"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 781,
+              "sha256": "0043d340615489974356aec2a9248e3601031e53dac7a9f54525d5881adbbabb"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 1991,
+              "sha256": "e24705c030d347b9d2d106948304fe398fdae3974033d35adf87a397b8d51f8a"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "claude-settings",
+            "verdict": "review_required",
+            "findings": [
+              {
+                "code": "UNMODELED_CHANGE",
+                "severity": "medium",
+                "direction": "review",
+                "message": "An unsupported field changed. Its permission impact is unknown; inspect the cited lines.",
+                "evidence": {
+                  "before": {
+                    "line": 3,
+                    "column": 22
+                  },
+                  "after": {
+                    "line": 3,
+                    "column": 22
+                  }
+                }
+              }
+            ],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 3,
+                      "column": 22
+                    },
+                    "after": {
+                      "line": 3,
+                      "column": 22
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "underflow",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 1,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "1 تغييرات · تحتاج مراجعة · التغطية جزئية",
+          "actualCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "evidence": [
+            {
+              "before": {
+                "line": 5,
+                "column": 20
+              },
+              "after": {
+                "line": 5,
+                "column": 20
+              }
+            }
+          ],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "8ac28ef9aa0feee347c71f7b75b628214370464fe2d53fec75ed3feb715500a8",
+            "afterSha256": "3ace0f38be5f2ad5ea3e0cf274c4bdf310d74e614d866d73f284f239962dc247"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 1303,
+              "sha256": "a9f8cb0ef2982238393603879bdcc18b90b14abd690c3dbc9a0dee3753cbcbc8"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 769,
+              "sha256": "819ec6af403fdc703407fecee9dd073cf59ddb0b4537b4508ed1001aca5f4891"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 1991,
+              "sha256": "37918db97efcdce3981123c5c877012cd72118640602be54d673c2336727ed32"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "review_required",
+            "findings": [
+              {
+                "code": "UNMODELED_CHANGE",
+                "severity": "medium",
+                "direction": "review",
+                "message": "An unsupported field changed. Its permission impact is unknown; inspect the cited lines.",
+                "evidence": {
+                  "before": {
+                    "line": 5,
+                    "column": 20
+                  },
+                  "after": {
+                    "line": 5,
+                    "column": 20
+                  }
+                }
+              }
+            ],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "equal-large-integer",
+          "expectedCodes": [],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "edcdfb20a752157d2e949d87eca07eb6af7cf9f9c7038afc15826563af7bb9dd",
+            "afterSha256": "c29e3cb91af87a7f9bc4006d13d21dabbaa7cc614a0469ee4b5bc76d52aa17bb"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "equal-underflow",
+          "expectedCodes": [],
+          "cli": {
+            "json": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 0,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 0,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "0 changes · no_review_level_change_detected · Coverage: partial",
+          "actualCodes": [],
+          "evidence": [],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "8ac28ef9aa0feee347c71f7b75b628214370464fe2d53fec75ed3feb715500a8",
+            "afterSha256": "eeb9bd66902ba317c03fcc942ad7b6c3f436c1ed5983f56f3da0688ff522c446"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 928,
+              "sha256": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 715,
+              "sha256": "7b5c8608ebc642646ea85c6119a3b1e9a01450c45bbe6cca9816301839c81de7"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 794,
+              "sha256": "dc27da2386b4f671d1ebf6b10a15c80511b39c29753bf17fa69d8e47d4e47e6f"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "mcp",
+            "verdict": "no_review_level_change_detected",
+            "findings": [],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 5,
+                      "column": 20
+                    },
+                    "after": {
+                      "line": 5,
+                      "column": 20
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        },
+        {
+          "case": "number-to-string",
+          "expectedCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "cli": {
+            "json": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "markdown": {
+              "exitCode": 1,
+              "stderr": ""
+            },
+            "sarif": {
+              "exitCode": 1,
+              "stderr": ""
+            }
+          },
+          "browserStatus": "1 changes · review_required · Coverage: partial",
+          "actualCodes": [
+            "UNMODELED_CHANGE"
+          ],
+          "evidence": [
+            {
+              "before": {
+                "line": 3,
+                "column": 22
+              },
+              "after": {
+                "line": 3,
+                "column": 22
+              }
+            }
+          ],
+          "coverage": "partial",
+          "inputs": {
+            "beforeSha256": "cf4df3582c0343d2eb4b3fe68d1878a77ff385947b44b2c02c2bbb0eaa68ebe9",
+            "afterSha256": "d7f2752647966daa08f77f0e9e5161c9d9c87fdc741b14948556989ab5e64b39"
+          },
+          "analysisHttpRequests": [],
+          "downloads": [
+            {
+              "format": "json",
+              "filename": "monna-permission-diff.json",
+              "bytes": 1315,
+              "sha256": "3c05f79bf9092cb7c251f06a2f25e082dc2ff0b127def3fda1241e01cdd8023c"
+            },
+            {
+              "format": "markdown",
+              "filename": "monna-permission-diff.md",
+              "bytes": 781,
+              "sha256": "0043d340615489974356aec2a9248e3601031e53dac7a9f54525d5881adbbabb"
+            },
+            {
+              "format": "sarif",
+              "filename": "monna-permission-diff.sarif",
+              "bytes": 1991,
+              "sha256": "e24705c030d347b9d2d106948304fe398fdae3974033d35adf87a397b8d51f8a"
+            }
+          ],
+          "errors": [],
+          "report": {
+            "schema_version": "1.0",
+            "tool": {
+              "name": "MONNA Agent Permission Diff",
+              "version": "0.1.0"
+            },
+            "format": "claude-settings",
+            "verdict": "review_required",
+            "findings": [
+              {
+                "code": "UNMODELED_CHANGE",
+                "severity": "medium",
+                "direction": "review",
+                "message": "An unsupported field changed. Its permission impact is unknown; inspect the cited lines.",
+                "evidence": {
+                  "before": {
+                    "line": 3,
+                    "column": 22
+                  },
+                  "after": {
+                    "line": 3,
+                    "column": 22
+                  }
+                }
+              }
+            ],
+            "coverage": {
+              "status": "partial",
+              "unsupported_fields": [
+                {
+                  "status": "unsupported",
+                  "evidence": {
+                    "before": {
+                      "line": 3,
+                      "column": 22
+                    },
+                    "after": {
+                      "line": 3,
+                      "column": 22
+                    }
+                  }
+                }
+              ]
+            },
+            "limitations": [
+              "Static comparison of two supplied files, not effective permission evaluation.",
+              "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+              "No server commands, hooks or tools are executed; no network requests are made.",
+              "Config values are withheld from reports. Source line locations identify evidence."
+            ]
+          }
+        }
+      ],
+      "runtime": {
+        "node": "v24.3.0",
+        "chromium": "156.0.8078.4"
+      }
+    }
+  },
+  "sourceSha256": {
+    "src/json.mjs": "9cf309b3f4b11201c7300d2bab864696b819ff31719be7624177e21d10fe43f5",
+    "src/diff.mjs": "199c530d6e918faa62c76feee8747f44a92487a48e17e28d63a2cbc1c4ad00f3",
+    "src/report.mjs": "78457dc9ce46be347e8367001abc8bffc2ca1531b07a4fdbaacbe74c701f9b7c",
+    "test/numeric.test.mjs": "0d7afc9dfcac866d475ab2f88850a87ef3820dbd31db585c21521e12c1c30c1d",
+    "verification/numeric-fixtures.mjs": "d5fb2f9d133a47966ea14cd2dcc2cca4e30d914aaea6b8f12495a049d747370c",
+    "verification/numeric-workflow.mjs": "108ea96c63ee3980baff7aa80bd85987f84bd29f1accd93a0c89917388ef4259",
+    "verification/numeric-evidence.mjs": "d0a942572a253386e28014ec67b3da1df354ecda5498a6880c7852a8c5c21db5"
+  },
+  "samples": {
+    "before.json": "bd55acffa20d2d5670407303bc578a1c32903dfddc105dea6f0636e6be6871c9",
+    "fixed-report.json": "a9f8cb0ef2982238393603879bdcc18b90b14abd690c3dbc9a0dee3753cbcbc8",
+    "after.json": "edcdfb20a752157d2e949d87eca07eb6af7cf9f9c7038afc15826563af7bb9dd",
+    "baseline-report.json": "e6b895a64bb5a89bd4ca56eb760c7b97add76ab9ec05d69c5da6c595caba87d2"
+  },
+  "limits": [
+    "Synthetic fixtures only; no effective-permission evaluation/security-scanner claim",
+    "No hosted CI/SARIF-ingestion/other-browser claim",
+    "Existing numeric range rejection unchanged; exact comparison applies to previously accepted values"
+  ],
+  "spendUSD": 0
+}
