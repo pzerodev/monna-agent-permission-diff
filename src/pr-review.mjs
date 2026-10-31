@@ -19,6 +19,21 @@ function blob(cwd,revision,path){
  if(!Number.isSafeInteger(size)||size>2000000)throw Error('Configuration exceeds the file limit.');
  return git(cwd,['cat-file','blob',match[2]],2000001);
 }
+// Git/GitHub blob line anchors advance on LF; text editors and our generic
+// reports also recognize lone CR. Keep only the requested line translations,
+// never source text, in the PR-specific link evidence.
+function githubLines(text,requested){
+ const wanted=new Set(requested),lines=new Map([[1,1]]);let sourceLine=1,gitLine=1;
+ for(let i=0;i<text.length;i++){
+  if(text[i]==='\r'){
+   if(text[i+1]==='\n'){i++;gitLine++;}
+   sourceLine++;
+  }else if(text[i]==='\n'){sourceLine++;gitLine++;}
+  else continue;
+  if(wanted.has(sourceLine))lines.set(sourceLine,gitLine);
+ }
+ return requested.map(line=>lines.get(line));
+}
 export function reviewPR({cwd,base,head,repository,threshold='medium'}){
  if(!shaPattern.test(base)||!shaPattern.test(head)||!/^[-\w.]+\/[-\w.]+$/.test(repository))throw Error('Invalid commit or repository identity.');
  shouldFail({findings:[]},threshold);
@@ -34,7 +49,11 @@ export function reviewPR({cwd,base,head,repository,threshold='medium'}){
   try{
    const before=blob(cwd,mergeBase,path),after=blob(cwd,head,path);
    const empty=format==='mcp'?' {"mcpServers":{}} ':'{}';
-   return {path,status:'compared',beforePresent:before!==null,afterPresent:after!==null,report:compare(before??empty,after??empty,{format})};
+   const report=compare(before??empty,after??empty,{format});
+   const beforeLines=githubLines(before??empty,report.findings.map(f=>f.evidence.before.line));
+   const afterLines=githubLines(after??empty,report.findings.map(f=>f.evidence.after.line));
+   const githubEvidence=report.findings.map((_,i)=>({before:beforeLines[i],after:afterLines[i]}));
+   return {path,status:'compared',beforePresent:before!==null,afterPresent:after!==null,report,githubEvidence};
   }catch{return {path,status:'error',reason:'Configuration could not be compared: invalid JSON, unsupported Git entry, unavailable object or input limit. Review manually; no clean result is claimed.'};}
  });
  const incomplete=files.some(f=>f.status!=='compared');
@@ -74,10 +93,12 @@ export function prMarkdown(result){
   if(file.status!=='compared'){lines.push('',`**Manual review required:** ${file.reason}`);return;}
   lines.push('',`Coverage: ${file.report.coverage.status}.`);
   if(!file.report.findings.length)lines.push('No declared changes in compared fields.');
-  for(const f of file.report.findings){
+  for(const [index,f] of file.report.findings.entries()){
    const [why,action]=advice(f.code);
-   const before=file.beforePresent?`[Before L${f.evidence.before.line}](${url(result.mergeBase,file.path,f.evidence.before.line)})`:'Before: file absent (synthetic empty baseline)';
-   const after=file.afterPresent?`[After L${f.evidence.after.line}](${url(result.head,file.path,f.evidence.after.line)})`:'After: file removed (synthetic empty state)';
+   const beforeLine=file.githubEvidence?.[index]?.before??f.evidence.before.line;
+   const afterLine=file.githubEvidence?.[index]?.after??f.evidence.after.line;
+   const before=file.beforePresent?`[Before L${beforeLine}](${url(result.mergeBase,file.path,beforeLine)})`:'Before: file absent (synthetic empty baseline)';
+   const after=file.afterPresent?`[After L${afterLine}](${url(result.head,file.path,afterLine)})`:'After: file removed (synthetic empty state)';
    lines.push('',`### ${f.severity.toUpperCase()} · ${f.code}`,`${before} → ${after}`,'',`Why review: ${why}`,'',`Action: ${action}`);
   }
  });

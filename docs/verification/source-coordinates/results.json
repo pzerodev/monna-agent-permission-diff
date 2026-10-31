@@ -3,9 +3,10 @@
   "sourceSha256": {
     "src/json.mjs": "fcc3afdd4b21ea38eba587380cb0c522c21000cd8918fd6875f59c996b5245a8",
     "src/report.mjs": "530de06b3b5390fcef7eb262967d3bf5917ce7a8cd02617f4da9a3ce57204462",
-    "test/coordinates.test.mjs": "6fbb3dcf15a8142741fdea9bcd8d91a1766a057bfc4b19e7289db15191969e05",
+    "src/pr-review.mjs": "e23586aeab7cb8eee7c0276a36d25fa35a8559497f4d941810f2889140bb851a",
+    "test/coordinates.test.mjs": "116b22d5cb0e408900dd6b66a157fbb5f2b7ca865753a12094a86f9b0d901350",
     "verification/coordinate-workflow.mjs": "cb2ed36096652e9180624450d1e2eed12c2bd94c7e7463a2ef7c616e0bb0891f",
-    "verification/coordinate-evidence.mjs": "238c15d10b3f89edd116e0f2e6756ed8502090f66a9bb5b4d8ca048093abe9fc"
+    "verification/coordinate-evidence.mjs": "f2d2779b4e7d60a988e5d60488e1c550e0caeb2eb4d2ac516f93e9fb86e4b7bb"
   },
   "cases": [
     {
@@ -1432,11 +1433,14 @@
   ],
   "baselineNode": {
     "existingPass": 40,
-    "newPass": 3,
-    "newFail": 4
+    "newPass": 5,
+    "newFail": 4,
+    "fullPass": 45,
+    "fullFail": 4,
+    "total": 49
   },
   "finalNode": {
-    "pass": 47,
+    "pass": 49,
     "fail": 0,
     "skip": 0
   },
@@ -1470,5 +1474,36 @@
     "No GitHub code-scanning ingestion, Firefox, WebKit or hosted CI.",
     "Offline original-file coordinate replay follows SARIF 2.1.0 newlineSequences and UTF-16 columns.",
     "Only one terminal LF added by CLI console.log is removed for browser/CLI renderer byte comparison."
-  ]
+  ],
+  "githubAnchorEvidence": {
+    "liveObservation": {
+      "url": "https://github.com/pzerodev/monna-agent-permission-diff/blob/81461d4482476a70c303cd7f311931a3296d5289/docs/verification/source-coordinates/cr/after.json",
+      "observedAt": "2026-10-31T04:14:15.817569+00:00",
+      "browser": "isolated headless Chrome, public unauthenticated file view",
+      "observedDataLineNumbers": [
+        "1"
+      ],
+      "sourceLfCount": 0,
+      "sourceCrCount": 6,
+      "interpretation": "GitHub blob anchors use LF lines, distinct from textarea physical-line normalization"
+    },
+    "nativeGitControlCases": [
+      "CR",
+      "mixed"
+    ],
+    "base": {
+      "pass": 2,
+      "fail": 0
+    },
+    "intermediate": {
+      "commit": "81461d4482476a70c303cd7f311931a3296d5289",
+      "pass": 0,
+      "fail": 2
+    },
+    "final": {
+      "pass": 2,
+      "fail": 0
+    },
+    "policy": "Generic reports keep CRLF/CR/LF coordinates; PR links translate only their cited lines to Git/GitHub LF anchors."
+  }
 }

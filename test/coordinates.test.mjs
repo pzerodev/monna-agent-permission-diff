@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {compare} from '../src/diff.mjs';
 import {parseConfig} from '../src/json.mjs';
 import {sarif} from '../src/report.mjs';
+import {reviewPR,prMarkdown} from '../src/pr-review.mjs';
 
 const folder=mkdtempSync(join(tmpdir(),'monna-coordinates-'));
 test.after(()=>rmSync(folder,{recursive:true,force:true}));
@@ -80,3 +81,27 @@ test('escaped control characters remain string data, not source line breaks',()=
     assert.equal(finding.evidence.before.line,1);assert.equal(finding.evidence.after.line,1);
   }
 });
+
+for(const name of ['CR','mixed']){
+  test(`${name} PR links retain the native Git source lines`,()=>{
+    const cwd=join(folder,'git-'+name);mkdirSync(cwd);
+    const git=(...args)=>{
+      const result=spawnSync('git',['-c','user.name=Coordinate fixture','-c','user.email=fixture@example.invalid',
+        '-c','commit.gpgsign=false','-c','core.autocrlf=false',...args],{cwd,encoding:'utf8'});
+      assert.equal(result.status,0,result.stderr);return result.stdout.trim();
+    };
+    git('init','--initial-branch=main');mkdirSync(join(cwd,'.claude'));
+    const file='.claude/settings.json';
+    const commit=text=>{writeFileSync(join(cwd,file),text);git('add',file);git('commit','-m','fictional configuration');return git('rev-parse','HEAD');};
+    const base=commit(render(beforeLines,separators[name])),head=commit(render(afterLines,separators[name]));
+    // Native git grep provides the independent line-number convention used by
+    // GitHub blob anchors; do not derive expected anchors with our parser.
+    const beforeLine=Number(/:(\d+):/.exec(git('grep','-n','-F','-e','"allow"',base,'--',file))[1]);
+    const afterLine=Number(/:(\d+):/.exec(git('grep','-n','-F','-e',canary,head,'--',file))[1]);
+    const result=reviewPR({cwd,base,head,repository:'example/coordinates'}),md=prMarkdown(result);
+    assert.equal(result.files[0].report.findings[0].code,'ALLOW_ADDED');
+    assert.ok(md.includes(`[Before L${beforeLine}](https://github.com/example/coordinates/blob/${base}/${file}#L${beforeLine})`));
+    assert.ok(md.includes(`[After L${afterLine}](https://github.com/example/coordinates/blob/${head}/${file}#L${afterLine})`));
+    assert.ok(!md.includes(canary));
+  });
+}

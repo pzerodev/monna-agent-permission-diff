@@ -25,6 +25,15 @@ the parser's UTF-16 column units. This aligns the CLI, browser and original-file
 coordinate replay. Rule codes, findings, severity, direction, coverage and
 redaction are unchanged. LF/CRLF inputs retain their existing coordinates.
 
+GitHub blob anchors use a different convention: LF determines the numbered
+blob rows, including for CR-only input. The public CR fixture was checked in
+an isolated browser and had one numbered row. PR review therefore retains
+universal text coordinates in its generic report and separately translates
+only the cited line numbers for GitHub links. The added `githubEvidence`
+contains numbers, not configuration text. Older saved PR results retain their
+existing formatter fallback. Native `git grep -n` supplies independent expected
+anchors in CR-only and mixed-line-ending PR regressions.
+
 [SARIF2.1.0 sections3.14.26–27](https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/sarif-v2.1.0-os.html)
 define the default line-break convention, greedy separator ordering and the
 required column-unit declaration for text results. The astral-prefix control's
@@ -41,12 +50,19 @@ it is not a new production dependency or a dependency on PR3.
 
 | Check | Before | After |
 | --- | --- | --- |
-| Existing `node --test` | 40 pass | included in47 pass |
-| Seven new tests | 4 fail /3 pass | 7 pass |
+| Existing `node --test` | 40 pass | included in49 pass |
+| Nine new tests | 4 fail /5 pass | 9 pass |
 | `node benchmark/run.mjs` | 10/10 fixtures pass | 10/10 fixtures pass |
 | Six native browser workflows | 4 fail /2 pass | 6 pass |
 | Completed browser downloads per stage | 18 | 18 |
 | HTTP requests during analysis/export | 0 | 0 |
+
+The two native-Git link controls pass on the original base and final fix.
+They fail on intermediate commit `81461d4`, which changed the shared parser
+before the GitHub adapter was added. That regression was found by the live
+fixture check and corrected in this same PR. It is not an additional claimed
+outcome or a second PR. The public observation and actual test results are
+recorded in the machine-readable evidence.
 
 The browser workflows cover LF, CRLF, CR-only and mixed breaks for Claude
 settings, CR-only MCP endpoints in Arabic UI, and an astral Unicode prefix.
@@ -81,7 +97,7 @@ and an unused localhost8432. `PLAYWRIGHT_MODULE` can name an existing module
 path if it is outside the checkout. The harness starts and stops its own Bun
 preview, creates a fresh output directory and retains every file/report plus
 `results.json`. It does not modify configurations or execute their contents.
-The evidence-only command needs Node alone and verifies all five source pins,
+The evidence-only command needs Node alone and verifies all six source pins,
 the retained input/download hashes, rejection of the old regions and correct
 replay of the fixed regions.
 

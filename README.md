@@ -47,6 +47,7 @@ Source locations count CRLF, CR and LF as line breaks, with CRLF counted once.
 Columns count UTF-16 code units. SARIF declares both conventions so locations
 can be resolved against the original files, including CR-only files loaded in
 the browser. Escaped control characters within JSON strings remain data.
+PR-review links separately use Git/GitHub's LF-based blob line numbers.
 
 ## GitHub Action
 

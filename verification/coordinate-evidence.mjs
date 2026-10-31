@@ -25,4 +25,4 @@ for(const [side,location,token] of [['before','relatedLocations','['],['after','
   assert.equal(point(sources[side],newRun.results[0][location][0].physicalLocation.region,newRun),token);
 }
 assert.deepEqual(newRun.newlineSequences,['\r\n','\r','\n']);
-console.log('Five source pins and actual download/source hashes match; baseline regions fail replay; fixed regions point to the original tokens.');
+console.log(`${Object.keys(evidence.sourceSha256).length} source pins and actual download/source hashes match; baseline regions fail replay; fixed regions point to the original tokens.`);
