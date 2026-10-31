@@ -43,6 +43,11 @@ Permission lists compare as sets; executable arguments compare in order. Paths a
 
 Strict UTF-8 JSON only: no JSONC, comments or trailing commas. Duplicate keys, nonfinite numbers and malformed consumed fields are rejected. Input limits: 2 MB bytes per file, 1 million characters, nesting depth 64 and 50,000 parsed nodes. Large inputs fail visibly rather than being truncated.
 
+Source locations count CRLF, CR and LF as line breaks, with CRLF counted once.
+Columns count UTF-16 code units. SARIF declares both conventions so locations
+can be resolved against the original files, including CR-only files loaded in
+the browser. Escaped control characters within JSON strings remain data.
+
 ## GitHub Action
 
 **Automatic PR mode:** see [PR review setup and measured limitations](docs/PR-REVIEW.md). It discovers changed configuration files and extracts both revisions automatically, with source links, review reasons and suggested actions. The two-file action below remains available for manual comparisons.

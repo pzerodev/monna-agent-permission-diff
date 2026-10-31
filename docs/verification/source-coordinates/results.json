@@ -1,0 +1,1474 @@
+{
+  "baseCommit": "7555911a4990338791853c7f363c01941a2fd376",
+  "sourceSha256": {
+    "src/json.mjs": "fcc3afdd4b21ea38eba587380cb0c522c21000cd8918fd6875f59c996b5245a8",
+    "src/report.mjs": "530de06b3b5390fcef7eb262967d3bf5917ce7a8cd02617f4da9a3ce57204462",
+    "test/coordinates.test.mjs": "6fbb3dcf15a8142741fdea9bcd8d91a1766a057bfc4b19e7289db15191969e05",
+    "verification/coordinate-workflow.mjs": "cb2ed36096652e9180624450d1e2eed12c2bd94c7e7463a2ef7c616e0bb0891f",
+    "verification/coordinate-evidence.mjs": "238c15d10b3f89edd116e0f2e6756ed8502090f66a9bb5b4d8ca048093abe9fc"
+  },
+  "cases": [
+    {
+      "case": "lf",
+      "inputs": {
+        "beforeSha256": "9d7617a830f72d080547ec9aab59f1e8727cbf5b54aeb1691d4466e9f9859535",
+        "afterSha256": "e535997a6d8300f3409928547301beebafc365ede239e21fb0a86adfa2cbe3b8"
+      },
+      "expected": {
+        "before": {
+          "line": 3,
+          "column": 14
+        },
+        "after": {
+          "line": 4,
+          "column": 7
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 1976,
+            "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+          }
+        ]
+      },
+      "beforeFailures": [],
+      "after": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2094,
+            "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 96,
+          "sha256": "e535997a6d8300f3409928547301beebafc365ede239e21fb0a86adfa2cbe3b8"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "9d7617a830f72d080547ec9aab59f1e8727cbf5b54aeb1691d4466e9f9859535"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 1976,
+          "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 1977,
+          "sha256": "f673e26690eb496f1fbba2e92997af26746bc4f7f23ca5e8031d6dd4c2dbb0c6"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 96,
+          "sha256": "e535997a6d8300f3409928547301beebafc365ede239e21fb0a86adfa2cbe3b8"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "9d7617a830f72d080547ec9aab59f1e8727cbf5b54aeb1691d4466e9f9859535"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2094,
+          "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2095,
+          "sha256": "62af12417460949a7bd7037be04238ea22c82601a2bd4488bb08ddec4644e6f2"
+        }
+      ]
+    },
+    {
+      "case": "crlf",
+      "inputs": {
+        "beforeSha256": "b3087343ee94a0b6bf31582471c66ff6c76d7deccf7740898289ab7e7d9366f6",
+        "afterSha256": "3186b981a208da80997ccd848af8038675ebb6fcee42ce453fa4e5b27989de45"
+      },
+      "expected": {
+        "before": {
+          "line": 3,
+          "column": 14
+        },
+        "after": {
+          "line": 4,
+          "column": 7
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 1976,
+            "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+          }
+        ]
+      },
+      "beforeFailures": [],
+      "after": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2094,
+            "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 102,
+          "sha256": "3186b981a208da80997ccd848af8038675ebb6fcee42ce453fa4e5b27989de45"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 46,
+          "sha256": "b3087343ee94a0b6bf31582471c66ff6c76d7deccf7740898289ab7e7d9366f6"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 1976,
+          "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 1977,
+          "sha256": "f673e26690eb496f1fbba2e92997af26746bc4f7f23ca5e8031d6dd4c2dbb0c6"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 102,
+          "sha256": "3186b981a208da80997ccd848af8038675ebb6fcee42ce453fa4e5b27989de45"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 46,
+          "sha256": "b3087343ee94a0b6bf31582471c66ff6c76d7deccf7740898289ab7e7d9366f6"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2094,
+          "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2095,
+          "sha256": "62af12417460949a7bd7037be04238ea22c82601a2bd4488bb08ddec4644e6f2"
+        }
+      ]
+    },
+    {
+      "case": "cr",
+      "inputs": {
+        "beforeSha256": "a4052c757448fbab43995607acdc67fa1099410f87f33e7243b7e0d311b6b6b1",
+        "afterSha256": "5257dae6e73533216fde33705f013bdd31a0a333f0c1b77d4d6307f30e68e2c0"
+      },
+      "expected": {
+        "before": {
+          "line": 3,
+          "column": 14
+        },
+        "after": {
+          "line": 4,
+          "column": 7
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 35
+              },
+              "after": {
+                "line": 1,
+                "column": 43
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 1976,
+            "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+          }
+        ]
+      },
+      "beforeFailures": [
+        "json CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "markdown CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "sarif CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "CLI coordinates: Expected values to be strictly deep-equal:",
+        "SARIF after-source replay: region points beyond the original file",
+        "SARIF before-source replay: region points beyond the original file"
+      ],
+      "after": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2094,
+            "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 96,
+          "sha256": "5257dae6e73533216fde33705f013bdd31a0a333f0c1b77d4d6307f30e68e2c0"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "a4052c757448fbab43995607acdc67fa1099410f87f33e7243b7e0d311b6b6b1"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 1976,
+          "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1075,
+          "sha256": "902487235210d544b8202f0c5832b05dba1d1b77c6245d17a605061f14bc5817"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "4ceeb19d175300ea664c321d33906bd1e6ef7303b409388f2779a64d219111ef"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 1978,
+          "sha256": "b393c1d5672e50d383dded7b38eaf13d993c527a0b9ad141d41a2f28f5688f1e"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 96,
+          "sha256": "5257dae6e73533216fde33705f013bdd31a0a333f0c1b77d4d6307f30e68e2c0"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "a4052c757448fbab43995607acdc67fa1099410f87f33e7243b7e0d311b6b6b1"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2094,
+          "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2095,
+          "sha256": "62af12417460949a7bd7037be04238ea22c82601a2bd4488bb08ddec4644e6f2"
+        }
+      ]
+    },
+    {
+      "case": "mixed",
+      "inputs": {
+        "beforeSha256": "2b84284ae9bef02cc49b015a04e139f5a489c29a02a5acf350a1a7dcdc50c899",
+        "afterSha256": "09b8d1d097548d803a383b8ae7877f8c180b20ce97019cf325595d0f1b6683ea"
+      },
+      "expected": {
+        "before": {
+          "line": 3,
+          "column": 14
+        },
+        "after": {
+          "line": 4,
+          "column": 7
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 2,
+                "column": 33
+              },
+              "after": {
+                "line": 3,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 1976,
+            "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+          }
+        ]
+      },
+      "beforeFailures": [
+        "json CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "markdown CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "sarif CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "CLI coordinates: Expected values to be strictly deep-equal:",
+        "SARIF after-source replay: Expected values to be strictly equal:",
+        "SARIF before-source replay: Expected values to be strictly equal:"
+      ],
+      "after": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 3,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 7
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1073,
+            "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 777,
+            "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2094,
+            "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 98,
+          "sha256": "09b8d1d097548d803a383b8ae7877f8c180b20ce97019cf325595d0f1b6683ea"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 44,
+          "sha256": "2b84284ae9bef02cc49b015a04e139f5a489c29a02a5acf350a1a7dcdc50c899"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 1976,
+          "sha256": "d66cc11530e945953ce413a76c2c3f192a40fc32e2d229d2988be312d0d35bf7"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "774d8f15996bc48949c817db62ba9cb735c730e089f63be937ec928d14cc9421"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "03592010ad401632c6f01f87f16baea63636d773010655f84db07c0233544bc9"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 1977,
+          "sha256": "17d4705d26d87ada690268db7e75cc5c0770a5206265fa659659c5f1e8b78b08"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 98,
+          "sha256": "09b8d1d097548d803a383b8ae7877f8c180b20ce97019cf325595d0f1b6683ea"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 44,
+          "sha256": "2b84284ae9bef02cc49b015a04e139f5a489c29a02a5acf350a1a7dcdc50c899"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1073,
+          "sha256": "3ef613a49bc1157b11fecd4033655ca56441f82b126f64427e01c0ad3bf03f3f"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 777,
+          "sha256": "2dff3437d592da98f7243162a68e26ed741bd652b36b565403773ccfa1542b05"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2094,
+          "sha256": "e8db0bc1ca96361b79fc19ac5757fd5fc938fff086485d4a563e9953ab3b6c95"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1074,
+          "sha256": "940d0cfaeda160e4a319817f9e746f11d5b2a2880fc82fe648b2c89bf316d256"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 778,
+          "sha256": "5824b5fd07548fd53fe7e80be1a15db99279f43d97923c9def22a388a4855b1b"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2095,
+          "sha256": "62af12417460949a7bd7037be04238ea22c82601a2bd4488bb08ddec4644e6f2"
+        }
+      ]
+    },
+    {
+      "case": "mcp-cr-ar",
+      "inputs": {
+        "beforeSha256": "3c6bab82a15c4ab06626f738cba77506f6287ff6c1c5abb068bb047bb2cd0d66",
+        "afterSha256": "a26848d3f92f0ce4a0eb15f8c240272fd1f918350dba3a2cfb1061c269e99c4a"
+      },
+      "expected": {
+        "before": {
+          "line": 4,
+          "column": 14
+        },
+        "after": {
+          "line": 4,
+          "column": 14
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ENDPOINT_CHANGED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 53
+              },
+              "after": {
+                "line": 1,
+                "column": 53
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ENDPOINT_CHANGED",
+            "evidence": {
+              "before": {
+                "line": 4,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 14
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1076,
+            "sha256": "94567dcf543c7b7c909ceb8e111fa652cc9c3d3aa88d609b97ec0be4fd846911"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 792,
+            "sha256": "7f936fc4c36b02da2f8b9a1717fa3284fea2057d2fbc03d354280229616c8e0a"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2014,
+            "sha256": "da35489840dc0eb1ec5a5215d09a263c07d09059d89d7db10fae868803e87bb5"
+          }
+        ]
+      },
+      "beforeFailures": [
+        "json CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "markdown CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "sarif CLI/browser bytes: Expected values to be strictly deep-equal:",
+        "CLI coordinates: Expected values to be strictly deep-equal:",
+        "SARIF after-source replay: region points beyond the original file",
+        "SARIF before-source replay: region points beyond the original file"
+      ],
+      "after": {
+        "cli": [
+          {
+            "code": "ENDPOINT_CHANGED",
+            "evidence": {
+              "before": {
+                "line": 4,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 14
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ENDPOINT_CHANGED",
+            "evidence": {
+              "before": {
+                "line": 4,
+                "column": 14
+              },
+              "after": {
+                "line": 4,
+                "column": 14
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1076,
+            "sha256": "94567dcf543c7b7c909ceb8e111fa652cc9c3d3aa88d609b97ec0be4fd846911"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 792,
+            "sha256": "7f936fc4c36b02da2f8b9a1717fa3284fea2057d2fbc03d354280229616c8e0a"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2132,
+            "sha256": "a92e7fd1f265fe7d166a9a07d4cb9c33d8f1f28a27c2c8b0304538bdc978e8f2"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 125,
+          "sha256": "a26848d3f92f0ce4a0eb15f8c240272fd1f918350dba3a2cfb1061c269e99c4a"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 126,
+          "sha256": "3c6bab82a15c4ab06626f738cba77506f6287ff6c1c5abb068bb047bb2cd0d66"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1076,
+          "sha256": "94567dcf543c7b7c909ceb8e111fa652cc9c3d3aa88d609b97ec0be4fd846911"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 792,
+          "sha256": "7f936fc4c36b02da2f8b9a1717fa3284fea2057d2fbc03d354280229616c8e0a"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 2014,
+          "sha256": "da35489840dc0eb1ec5a5215d09a263c07d09059d89d7db10fae868803e87bb5"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1077,
+          "sha256": "d72dced3386bc96ff3c53579076a53d6d0570abeb2f05af6825e6d0792ddde7b"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 793,
+          "sha256": "84bbec364bdf96e6679f7f503537f1342374b66d0eeeedc783df5270f9e60a42"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 2015,
+          "sha256": "023467c1490ebe52ca565f2e27172244d82e445c93059adc9eb53f3ea6f6987a"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 125,
+          "sha256": "a26848d3f92f0ce4a0eb15f8c240272fd1f918350dba3a2cfb1061c269e99c4a"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 126,
+          "sha256": "3c6bab82a15c4ab06626f738cba77506f6287ff6c1c5abb068bb047bb2cd0d66"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1076,
+          "sha256": "94567dcf543c7b7c909ceb8e111fa652cc9c3d3aa88d609b97ec0be4fd846911"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 792,
+          "sha256": "7f936fc4c36b02da2f8b9a1717fa3284fea2057d2fbc03d354280229616c8e0a"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2132,
+          "sha256": "a92e7fd1f265fe7d166a9a07d4cb9c33d8f1f28a27c2c8b0304538bdc978e8f2"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1077,
+          "sha256": "d360eb5463371aa0ef2757c44dd00fa4a709983e722e2554a4bafbeeaa681b3e"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 793,
+          "sha256": "a291fda3a6563b3f317e8712c2a5767c129a83f5ac51267e8c8937b0f7020b17"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2133,
+          "sha256": "30d3fdcf611e4e65a0a283d68556b6a1c2b7100c8ab4f7d5fde9b1cc81c9fb9b"
+        }
+      ]
+    },
+    {
+      "case": "astral-single",
+      "inputs": {
+        "beforeSha256": "c55a4f90123c79caa14bd8514c816bbb41f04d467983f50781fd4baaa368e5b0",
+        "afterSha256": "790a008e50549fbbcfddb1293f9efe242f6ff5f0ac41fe52bb187472a8e65479"
+      },
+      "expected": {
+        "before": {
+          "line": 1,
+          "column": 37
+        },
+        "after": {
+          "line": 1,
+          "column": 38
+        }
+      },
+      "before": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 37
+              },
+              "after": {
+                "line": 1,
+                "column": 38
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 37
+              },
+              "after": {
+                "line": 1,
+                "column": 38
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": null,
+          "columnKind": null
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1308,
+            "sha256": "4ca55311ede682a2d18c029c2f0a413c0923fb1ef545d9349034e6a81a0e002d"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 763,
+            "sha256": "5d2c78c28421cc71df39255240b16d97493f1949560b34520f017884b60e55d7"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 1963,
+            "sha256": "52952a3db9b22c3fae771c4f5df5e29edbdd4458bdc2be5fc6fffd25fa1b2aa4"
+          }
+        ]
+      },
+      "beforeFailures": [
+        "explicit column unit: Expected values to be strictly equal:"
+      ],
+      "after": {
+        "cli": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 37
+              },
+              "after": {
+                "line": 1,
+                "column": 38
+              }
+            }
+          }
+        ],
+        "browser": [
+          {
+            "code": "ALLOW_ADDED",
+            "evidence": {
+              "before": {
+                "line": 1,
+                "column": 37
+              },
+              "after": {
+                "line": 1,
+                "column": 38
+              }
+            }
+          }
+        ],
+        "sarifCoordinates": {
+          "newlineSequences": [
+            "\r\n",
+            "\r",
+            "\n"
+          ],
+          "columnKind": "utf16CodeUnits"
+        },
+        "downloads": [
+          {
+            "format": "json",
+            "filename": "monna-permission-diff.json",
+            "bytes": 1308,
+            "sha256": "4ca55311ede682a2d18c029c2f0a413c0923fb1ef545d9349034e6a81a0e002d"
+          },
+          {
+            "format": "markdown",
+            "filename": "monna-permission-diff.md",
+            "bytes": 763,
+            "sha256": "5d2c78c28421cc71df39255240b16d97493f1949560b34520f017884b60e55d7"
+          },
+          {
+            "format": "sarif",
+            "filename": "monna-permission-diff.sarif",
+            "bytes": 2081,
+            "sha256": "397a5a3628d7acbff9c871e92a265cd7a73fdb2183e7cbdd4d783e24bc572fa7"
+          }
+        ]
+      },
+      "nonCoordinateFindingsUnchanged": true,
+      "artifacts": [
+        {
+          "stage": "before",
+          "filename": "after.json",
+          "bytes": 84,
+          "sha256": "790a008e50549fbbcfddb1293f9efe242f6ff5f0ac41fe52bb187472a8e65479"
+        },
+        {
+          "stage": "before",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "c55a4f90123c79caa14bd8514c816bbb41f04d467983f50781fd4baaa368e5b0"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.json",
+          "bytes": 1308,
+          "sha256": "4ca55311ede682a2d18c029c2f0a413c0923fb1ef545d9349034e6a81a0e002d"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.markdown",
+          "bytes": 763,
+          "sha256": "5d2c78c28421cc71df39255240b16d97493f1949560b34520f017884b60e55d7"
+        },
+        {
+          "stage": "before",
+          "filename": "browser.sarif",
+          "bytes": 1963,
+          "sha256": "52952a3db9b22c3fae771c4f5df5e29edbdd4458bdc2be5fc6fffd25fa1b2aa4"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.json",
+          "bytes": 1309,
+          "sha256": "89b9516f3e154f3ca7ee799934e4d8efe2d29489ccfe6de46dc762ff18aeccc1"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.markdown",
+          "bytes": 764,
+          "sha256": "7b4d7cd42efc58210a8ed9f9a84b2c3544731b300cdddc9734ef85be5ef8c508"
+        },
+        {
+          "stage": "before",
+          "filename": "cli.sarif",
+          "bytes": 1964,
+          "sha256": "8f9614daae5b0f3ef6cba3ce0f92a5d4a0d366de08960ea16f6d9ac67d45533d"
+        },
+        {
+          "stage": "after",
+          "filename": "after.json",
+          "bytes": 84,
+          "sha256": "790a008e50549fbbcfddb1293f9efe242f6ff5f0ac41fe52bb187472a8e65479"
+        },
+        {
+          "stage": "after",
+          "filename": "before.json",
+          "bytes": 42,
+          "sha256": "c55a4f90123c79caa14bd8514c816bbb41f04d467983f50781fd4baaa368e5b0"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.json",
+          "bytes": 1308,
+          "sha256": "4ca55311ede682a2d18c029c2f0a413c0923fb1ef545d9349034e6a81a0e002d"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.markdown",
+          "bytes": 763,
+          "sha256": "5d2c78c28421cc71df39255240b16d97493f1949560b34520f017884b60e55d7"
+        },
+        {
+          "stage": "after",
+          "filename": "browser.sarif",
+          "bytes": 2081,
+          "sha256": "397a5a3628d7acbff9c871e92a265cd7a73fdb2183e7cbdd4d783e24bc572fa7"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.json",
+          "bytes": 1309,
+          "sha256": "89b9516f3e154f3ca7ee799934e4d8efe2d29489ccfe6de46dc762ff18aeccc1"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.markdown",
+          "bytes": 764,
+          "sha256": "7b4d7cd42efc58210a8ed9f9a84b2c3544731b300cdddc9734ef85be5ef8c508"
+        },
+        {
+          "stage": "after",
+          "filename": "cli.sarif",
+          "bytes": 2082,
+          "sha256": "c3c98da40bdf18b99c25b718c2bf0d443364aa50dff81dcb54655c2c1ef2d46d"
+        }
+      ]
+    }
+  ],
+  "baselineNode": {
+    "existingPass": 40,
+    "newPass": 3,
+    "newFail": 4
+  },
+  "finalNode": {
+    "pass": 47,
+    "fail": 0,
+    "skip": 0
+  },
+  "benchmark": {
+    "beforePass": 10,
+    "afterPass": 10,
+    "fixtureCount": 10
+  },
+  "browser": {
+    "beforePass": 2,
+    "beforeFail": 4,
+    "afterPass": 6,
+    "downloadsEachStage": 18,
+    "formats": [
+      "json",
+      "markdown",
+      "sarif"
+    ],
+    "httpRequestsDuringAnalysis": 0
+  },
+  "environment": {
+    "node": "24.3.0",
+    "bun": "1.4.4",
+    "playwright": "1.64.1",
+    "browser": "Chromium",
+    "platform": "macOS arm64",
+    "browserVersion": "Google Chrome for Testing 156.0.8078.4"
+  },
+  "limits": [
+    "No live configurations, provider/model calls or configured commands.",
+    "No GitHub code-scanning ingestion, Firefox, WebKit or hosted CI.",
+    "Offline original-file coordinate replay follows SARIF 2.1.0 newlineSequences and UTF-16 columns.",
+    "Only one terminal LF added by CLI console.log is removed for browser/CLI renderer byte comparison."
+  ]
+}

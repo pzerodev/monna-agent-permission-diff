@@ -1,0 +1,1 @@
+{  "permissions": {    "allow": [      "Read(./PUBLIC_TEST_CANARY_DO_NOT_USE/**)"    ]  }}

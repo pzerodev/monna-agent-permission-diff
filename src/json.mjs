@@ -5,7 +5,14 @@ export function parseConfig(source) {
   if (typeof source !== 'string' || source.length > 1000000) throw new ConfigError('Input must be JSON text of at most 1000000 characters.');
   let i = 0, nodes = 0;
   const locations = new Map(); const newlines = [-1];
-  for (let n = 0; n < source.length; n++) if (source[n] === '\n') newlines.push(n);
+  // Match textarea normalization and the declared SARIF source-line policy.
+  // Record the final code unit of CRLF so it counts as one break.
+  for (let n = 0; n < source.length; n++) {
+    if (source[n] === '\r') {
+      if (source[n + 1] === '\n') n++;
+      newlines.push(n);
+    } else if (source[n] === '\n') newlines.push(n);
+  }
   function where(index) {
     let lo=0,hi=newlines.length;
     while(lo+1<hi){const m=(lo+hi)>>1;if(newlines[m]<index)lo=m;else hi=m;}

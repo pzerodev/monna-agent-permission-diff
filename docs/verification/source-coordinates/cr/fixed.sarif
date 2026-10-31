@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "newlineSequences": [
+        "\r\n",
+        "\r",
+        "\n"
+      ],
+      "tool": {
+        "driver": {
+          "name": "MONNA Agent Permission Diff",
+          "version": "0.1.0",
+          "rules": [
+            {
+              "id": "ALLOW_ADDED",
+              "shortDescription": {
+                "text": "ALLOW_ADDED"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "ALLOW_ADDED",
+          "level": "error",
+          "message": {
+            "text": "An entry was added. Review the cited source; values are omitted from reports."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "after.json"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 7
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "id": 1,
+              "message": {
+                "text": "Before configuration"
+              },
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "before.json"
+                },
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 14
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "properties": {
+        "coverage": "supported_fields_only",
+        "limitations": [
+          "Static comparison of two supplied files, not effective permission evaluation.",
+          "Managed settings, other configuration layers, runtime flags, server behavior and filesystem links are not resolved.",
+          "No server commands, hooks or tools are executed; no network requests are made.",
+          "Config values are withheld from reports. Source line locations identify evidence."
+        ]
+      }
+    }
+  ]
+}
